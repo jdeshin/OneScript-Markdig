@@ -1,4 +1,4 @@
-﻿# Конвертор Markdown в HTML или текст для 1script
+﻿# Конвертор markdown в html или текст для OneScript
 
 Внешняя компонента реализующая возможность преобразования текста в формате Markdown, в обычный текст или текст html из [OneScript](https://github.com/EvilBeaver/OneScript).
 
