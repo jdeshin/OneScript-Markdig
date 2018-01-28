@@ -1,5 +1,6 @@
-﻿// Copyright (c) Alexandre Mutel. All rights reserved. 
-// Copyright (c) Yury Deshin. All rights reserved.
+﻿// Copyright (c) Yury Deshin. All rights reserved.
+// This file based on Markdig markdown processor library
+// Copyright (c) Alexandre Mutel. All rights reserved. 
 // This file is licensed under the BSD-Clause 2 license.  
 // See the license.txt file in the project root for more information. 
 using System;
