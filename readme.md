@@ -12,7 +12,7 @@
 ## Использование
 
 ```bsl
-ПодключитьВнешнююКомпоненту("ПутьКПапкеСУстановленнымиDll\MarkdigMarkdownProcessor.dll");
+ПодключитьВнешнююКомпоненту("ПутьКПапкеСDll\MarkdigMarkdownProcessor.dll");
 
 Процессор = Новый MarkdownПроцессорMarkdig;
 СтрокаMarkdown = "This is a text with some *emphasis*";
