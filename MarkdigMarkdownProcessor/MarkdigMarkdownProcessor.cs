@@ -24,7 +24,7 @@ namespace MarkdigMarkdownProcessor
 
         public MarkdigMarkdownProcessor()
         {
-            _pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
+            _pipeline = new MarkdownPipelineBuilder().Build();
         }
 
         [ScriptConstructor(Name = "Без параметров")]
@@ -34,25 +34,25 @@ namespace MarkdigMarkdownProcessor
         }
 
         [ContextMethod("ПолучитьHtmlИзMarkdown", "GetHtmlFromMarkdown")]
-        public string GetHtmlFromMarkdown(string markdown, bool useAdvancedExtensions = false)
+        public string GetHtmlFromMarkdown(string markdown)
         {
-            MarkdownPipeline pipeline = null;
+            return Markdown.ToHtml(markdown, _pipeline);
+        }
 
-            if (useAdvancedExtensions)
-                pipeline = _pipeline;
-
-            return Markdown.ToHtml(markdown, pipeline);
+        /// <summary>
+        /// Конфигурирует расширения. Расширения передаются строкой как extension1+extension2+extensionn. atributes должно быть последним т.к. модифицирует другие парсеры
+        /// </summary>
+        /// <param name="extensions">список расширений в виде строки, разделенной +</param>
+        [ContextMethod("СконфигурироватьРасширения", "ConfigureExtensions")]
+        public void ConfigureExtensions(string extensions = null)
+        {
+            _pipeline = new MarkdownPipelineBuilder().Configure(extensions).Build();
         }
 
         [ContextMethod("ПолучитьСтрокуИзMarkdown", "GetStringFromMarkdown")]
-        public string GetStringFromMarkdown(string markdown, bool useAdvancedExtensions = false)
+        public string GetStringFromMarkdown(string markdown)
         {
-            MarkdownPipeline pipeline = null;
-
-            if (useAdvancedExtensions)
-                pipeline = _pipeline;
-
-            return Markdown.ToPlainText(markdown, pipeline);
+            return Markdown.ToPlainText(markdown, _pipeline);
         }
     }
 }
