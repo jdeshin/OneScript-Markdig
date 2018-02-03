@@ -7,13 +7,31 @@
 
 ## Установка
 
+### OneScript
 Установка осуществляется простым копированием файлов dll в какую-нибудь папку.
 
+### HTTP-сервисы
+Установка осуществляется копированием файлов dll в папку Bin веб-приложения.
+Затем, необходимо подключить библиотеку, добавив нижеследующую строку в секцию <appSettings>, файла web.config:
+
+```bsl
+<add key="MarkdigMarkdownProcessor" value="attachAssembly" />
+```
+
+### 1С:Предприятие
+1. Необходимо скопировать файлы dll в какую-нибудь папку.
+2. Необходимо зарегистрировать MarkdigMarkdownProcessorCom.dll при помощи утилиты regasm.
+3. Для использования в 64-битных операционных системах, необходимо создать COM+ приложение.
+ 
 ## Использование
 
 Конфигурирование расширений осуществляется в соответствии с их [строковыми представлениями](https://github.com/lunet-io/markdig), а также с учетом того факта, что расширения advanced и attributes должны быть последними, в соответствии с [комментарием](https://github.com/lunet-io/markdig/blob/a097247272fbe4e3d14495be4cbf4effd866f04e/src/Markdig/MarkdownExtensions.cs#L79). 
 
+### OneScript
+
 ```bsl
+// Подключение внешней компоненты не требуется при использовании с http-сервисами,
+// т.к. библиотека подключается через web.config
 ПодключитьВнешнююКомпоненту("ПутьКПапкеСDll\MarkdigMarkdownProcessor.dll");
 
 Процессор = Новый MarkdownПроцессорMarkdig;
@@ -28,11 +46,16 @@
 Сообщить(СтрокаHtml); // <p>This is a text with some <em>emphasis</em></p>
 Сообщить(СтрокаТекст); // 
 
-// Вызов с обработкой расширений, за исключением BootStrap, Emoji, SmartyPants и soft line как hard line breaks
-СтрокаHtml = Процессор.ПолучитьHtmlИзMarkdown(СтрокаMarkdown, Истина);
-СтрокаТекст = Процессор.ПолучитьСтрокуИзMarkdown(СтрокаMarkdown, Истина);
-
-Сообщить(СтрокаHtml);
-Сообщить(СтрокаТекст);
 ```
 
+### 1С:Предприятие
+
+Код, написанный в 1С:Предприятие, за исключением создания COM-объекта является платформеннонезависимым и может быть напрямую перенесен в OneScript.
+
+```bsl
+ТекстMarkdown = "This is a text with some *emphasis*";
+// Создание COM-объекта является платформо-зависимым
+Процессор = Новый COMОбъект("MarkdigMarkdownProcessorCom.MarkdigMarkdownProcessor");
+Процессор.ConfigureExtensions("yaml+advanced");
+ТекстHtml = Процессор.GetHtmlFromMarkdown(ТекстMarkdown);
+```
