@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
+using System.IO;
+using System.Reflection;
 using Markdig;
 
 namespace MarkdigMarkdownProcessorCom
@@ -40,6 +42,7 @@ namespace MarkdigMarkdownProcessorCom
         public string GetHtmlFromMarkdown(string markdown)
         {
             return Markdown.ToHtml(markdown, _pipeline);
+            //return "";
         }
 
         /// <summary>
@@ -54,6 +57,7 @@ namespace MarkdigMarkdownProcessorCom
         public string GetStringFromMarkdown(string markdown)
         {
             return Markdown.ToPlainText(markdown, _pipeline);
+            //return "";
         }
     }
 }
