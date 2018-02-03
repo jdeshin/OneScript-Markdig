@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdigMarkdownProcessor", "MarkdigMarkdownProcessor\MarkdigMarkdownProcessor.csproj", "{AC62C9A5-9C90-437E-B4D9-7CB700822F3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdigMarkdownProcessorCom", "MarkdigMarkdownProcessorCom\MarkdigMarkdownProcessorCom.csproj", "{FE5EEB46-7FD4-4AC1-A3B4-3DFDA32A6E7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AC62C9A5-9C90-437E-B4D9-7CB700822F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC62C9A5-9C90-437E-B4D9-7CB700822F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC62C9A5-9C90-437E-B4D9-7CB700822F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE5EEB46-7FD4-4AC1-A3B4-3DFDA32A6E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE5EEB46-7FD4-4AC1-A3B4-3DFDA32A6E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE5EEB46-7FD4-4AC1-A3B4-3DFDA32A6E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE5EEB46-7FD4-4AC1-A3B4-3DFDA32A6E7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
