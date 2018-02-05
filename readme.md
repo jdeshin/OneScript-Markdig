@@ -25,7 +25,38 @@
  
 ## Использование
 
-Конфигурирование расширений осуществляется в соответствии с их [строковыми представлениями](https://github.com/lunet-io/markdig), а также с учетом того факта, что расширения advanced и attributes должны быть последними, в соответствии с [комментарием](https://github.com/lunet-io/markdig/blob/a097247272fbe4e3d14495be4cbf4effd866f04e/src/Markdig/MarkdownExtensions.cs#L79). 
+Конфигурирование расширений осуществляется в соответствии с их [строковыми представлениями](https://github.com/lunet-io/markdig/blob/master/src/Markdig/MarkdownExtensions.cs#L476), а также с учетом того факта, что расширения advanced и attributes должны быть последними, в соответствии с [комментарием](https://github.com/lunet-io/markdig/blob/a097247272fbe4e3d14495be4cbf4effd866f04e/src/Markdig/MarkdownExtensions.cs#L79).
+В настоящее время доступны нижеследующие расширения:
+- common
+- advanced
+- pipetables (входит в advanced)
+- emphasisextras (входит в advanced)
+- listextras (входит в advanced)
+- hardlinebreak
+- footnotes (входит в advanced)
+- footers (входит в advanced)
+- citations (входит в advanced)
+- attributes (входит в advanced, должен быть последним в списке подключаемых расширений) 
+- gridtables (входит в advanced)
+- abbreviations (входит в advanced)
+- emojis
+- definitionlists (входит в advanced)
+- customcontainers (входит в advanced)
+- figures (входит в advanced)
+- mathematics (входит в advanced)
+- bootstrap
+- medialinks (входит в advanced)
+- smartypants
+- autoidentifiers (входит в advanced)
+- tasklists (входит в advanced)
+- diagrams (входит в advanced)
+- nofollowlinks
+- nohtml
+- yaml
+- nonascii-noescape
+- autolinks (входит в advanced)
+
+Более подробное описание расширений можно посмотреть [здесь](https://github.com/lunet-io/markdig#features).
 
 ### OneScript
 
