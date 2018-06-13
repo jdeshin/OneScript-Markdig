@@ -55,4 +55,23 @@ namespace MarkdigMarkdownProcessor
             return Markdown.ToPlainText(markdown, _pipeline);
         }
     }
+
+    // Класс - менеджер обработки
+    [ContextClass("MarkdownПроцессор", "MarkdownProcessor")]
+    public class MarkdownDataProcessor : AutoContext<MarkdownDataProcessor>
+    {
+        public MarkdownDataProcessor()
+        {
+
+        }
+
+        // Метод платформы
+        [ContextMethod("Создать", "Create")]
+        public IValue Create()
+        {
+            // Создаем объект из модуля объекта
+            return new MarkdigMarkdownProcessor();
+        }
+    }
+
 }
